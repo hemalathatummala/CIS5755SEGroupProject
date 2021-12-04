@@ -63,6 +63,7 @@ app.secret_key = "Choose very long secret key"
 store = redis.from_url('redis://sessionstore.bxgo7b.0001.use1.cache.amazonaws.com:6379')
 
 #mapping route application path
+        
 @app.route('/')
 def index():
     if 'username' in session:
@@ -71,7 +72,6 @@ def index():
         visits = store.hincrby(username, 'visits', 1)
         #specifying ttl for username key - 30 secs
         store.expire(username, 30000)
-        
         return '''
         Logged in as {0}.<br>
         Visits: {1}
@@ -85,7 +85,6 @@ def login():
         session['username'] = request.form['username']
         username = escape(session['username'])
         visits = store.hincrby(username, 'visits', 1)
-        
         store.expire(username, 150)
         return  '''
                Logged in as {0}.<br>
