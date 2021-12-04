@@ -105,7 +105,9 @@ def logout():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug = True)
 ################################################################################
+        
 Note: we have replaced the redis end point url
+        
 19. we executed the file using following command : python3 application.py(application is up on the url :https://59211903e00640d2a5b2392a84a67bf8.vfs.cloud9.us-east-1.amazonaws.com/login and validated our changes)
 20. Post validation, we created requirements file by following command : pip freeze > requirements.txt
 21. we have pushed our changes to github by below commands(While keeping the current terminal window for project,  open a new terminal for git to manage the source code)
