@@ -50,7 +50,9 @@ As we have integrated cloud9 with github, we have pushed all our changes to gith
 16. we installed flask,flask-session and redis using fllowing command : python3 -m pip install Flask Flask-Session redis
 17. Now we tried verifying redis connection from command line using steps mentioned in redisConnectionTest.py
 18. we have created application.py and copied below code into it 
+        
 #####################################code############################################
+
 import redis
 from flask import Flask, session,  escape, request
 
@@ -71,9 +73,9 @@ def index():
         store.expire(username, 30000)
         
         return '''
-               Logged in as {0}.<br>
-               Visits: {1}
-               '''.format(username, visits)
+        Logged in as {0}.<br>
+        Visits: {1}
+        '''.format(username, visits)
     return 'You are not logged in'
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -104,9 +106,9 @@ def logout():
     
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug = True)
-################################################################################
         
-Note: we have replaced the redis end point url
+################################################################################
+
         
 19. we executed the file using following command : python3 application.py(application is up on the url :https://59211903e00640d2a5b2392a84a67bf8.vfs.cloud9.us-east-1.amazonaws.com/login and validated our changes)
 20. Post validation, we created requirements file by following command : pip freeze > requirements.txt
