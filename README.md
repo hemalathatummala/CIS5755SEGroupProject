@@ -8,14 +8,14 @@ we are designing fast session store for online applications by referring https:/
 application. In this application, we have consider ttl for email as 30 secs which means within 30 seconds if user logged in multiple times we will be capturing each successful login and showing it as number of Visists for application.
 
 ### Activities done by the Group
-Initial Plan: (1 hr)
+### Initial Plan: (1 hr)
 We initially discussed about session caching, how we can use redis and flask to achieve this task . We thought of implementing our application using AWS cloud platform by following the tutorial. 
 We wnat to use cloud9 as IDE to develop our application. 
 We then planned to integrate our github codebase with cloud9 , so that we will be able to push all our changes to github
 we then thought of implementing our application in cloud9 by installing required libraries
 Finally we thought of pushing our changes to github after validating them in cloud9
 
-Our approach to design Application(5hrs) : 
+### Our approach to design Application(5hrs) : 
 
 Our primary requirement for this application is designing a login page which will ask user to enter his email address and upon successful login we want to show his visting information(number of times he has accessed particualr application within specifc time)
 
