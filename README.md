@@ -19,8 +19,11 @@ Our primary requirement for this application is designing a login page which wil
 During development of our application we have followed AWS hands on approach to build fast session store for online applications , understand and did below steps.
 
 step1: First we have created redis cluster using elasticache aws service , given default configurations like name, 0 nodes etc. After successful creation of redis cluster we have copied the primary end point url and tested whether redis is accessible or not using redis-cli.
+
 step2: We have implemented small application using flask (a micro framework for web development in python) .In this step we have included login, logout functionalities for our application, also checking whether user email exists in session or not as root action
+
 step3: We have configured redis url , tried running application from command line. We have previewed our application and validated the application.
+
 step4: As we have integrated cloud9 with github, we have pushed all our changes to github repository. 
 
 ### Major Steps: 
