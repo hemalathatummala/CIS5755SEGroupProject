@@ -4,13 +4,13 @@ Hemalatha Tummala , Divya Nuthalapati
 ### GitHub url
 https://github.com/hemalathatummala/CIS5755SEGroupProject.git
 ### Project Introduction
-we are designing fast session store for online applications by referring https://aws.amazon.com/getting-started/hands-on/building-fast-session-caching-with-amazon-elasticache-for-redis/.Our application will have login page where user will be asking for his email and upon successful login we will show number of times user has logged in to particualr
-application. In this application, we have consider ttl for email as 30 secs which means within 30 seconds if user logged in multiple times we will be capturing each successful login and showing it as number of Visists for application.
+we are designing fast session store for online applications by referring https://aws.amazon.com/getting-started/hands-on/building-fast-session-caching-with-amazon-elasticache-for-redis/. Our application will have login page where user will be asking for his email and upon successful login we will show number of times user has logged into particular
+application. In this application, we have consider ttl for email as 30 secs which means within 30 seconds if user logged in multiple times we will be capturing each successful login and showing it as number of Visits for application.
 
 ### Activities done by the Group
-### Initial Plan: (1 hr)
+### Initial design plan: (1 hr)
 We initially discussed about session caching, how we can use redis and flask to achieve this task . We thought of implementing our application using AWS cloud platform by following the tutorial. 
-We wnat to use cloud9 as IDE to develop our application. 
+We want to use cloud9 as IDE to develop our application. 
 We then planned to integrate our github codebase with cloud9 , so that we will be able to push all our changes to github
 we then thought of implementing our application in cloud9 by installing required libraries
 Finally we thought of pushing our changes to github after validating them in cloud9
@@ -19,7 +19,7 @@ Finally we thought of pushing our changes to github after validating them in clo
 
 Our primary requirement for this application is designing a login page which will ask user to enter his email address and upon successful login we want to show his visting information(number of times he has accessed particualr application within specifc time)
 
-To design this application we have choosed python Flask framework , Amazon elasticache for redis as a distributed cache for session management and github as code management tool.
+To design this application we have choosed python Flask framework , Amazon elasticache for redis as a distributed cache for session management,Amazon cloud9 as IDE and github as code management tool.
 
 During development of our application we have followed AWS hands on approach to build fast session store for online applications , understand and did below steps.
 
@@ -49,8 +49,19 @@ As we have integrated cloud9 with github, we have pushed all our changes to gith
 15. Once redis cluster is available, we copie the end point url and tested the connection using command : src/redis-cli -p 6379 -h sessionstore.bxgo7b.0001.use1.cache.amazonaws.com:6379
 16. we installed flask,flask-session and redis using fllowing command : python3 -m pip install Flask Flask-Session redis
 17. Now we tried verifying redis connection from command line using steps mentioned in redisConnectionTest.py
-18. we have created application.py and copied below code into it 
+18. we have created application.py , added required code to it. I have attached code snippet for reference at the end.      
+19. we executed the file using following command : python3 application.py(application is up on the url :https://59211903e00640d2a5b2392a84a67bf8.vfs.cloud9.us-east-1.amazonaws.com/login and validated our changes)
+20. Post validation, we created requirements file by following command : pip freeze > requirements.txt
+21. we have pushed our changes to github by below commands(While keeping the current terminal window for project,  open a new terminal for git to manage the source code)
+        step1: git add --all
+        step2: git status
+        step3: git commit -m "commit message"
+        step4: git push (during this step please give ur email and token as password)
+22. We came to git hub repository to check our changes(we saw all our changes commited to github)
+23. To stop the application we can press Ctrl + C in cloud9 command line 
+24. We cleaned up all resources in aws as our code changes are there in github.
         
+application.py:
 #####################################code############################################
 
 import redis
@@ -107,18 +118,6 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug = True)
         
 ################################################################################
-
-        
-19. we executed the file using following command : python3 application.py(application is up on the url :https://59211903e00640d2a5b2392a84a67bf8.vfs.cloud9.us-east-1.amazonaws.com/login and validated our changes)
-20. Post validation, we created requirements file by following command : pip freeze > requirements.txt
-21. we have pushed our changes to github by below commands(While keeping the current terminal window for project,  open a new terminal for git to manage the source code)
-        step1: git add --all
-        step2: git status
-        step3: git commit -m "commit message"
-        step4: git push (during this step please give ur email and token as password)
-22. We came to git hub repository to check our changes(we saw all our changes commited to github)
-23. To stop the application we can press Ctrl + C in cloud9 command line 
-24. We cleaned up all resources in aws as our code changes are there in github.
 
 
 
